@@ -1,4 +1,6 @@
 let player = document.querySelector("video");
+let canvas = document.querySelector("canvas");
+let ctx = canvas.getContext("2d");
 let stream = null;
 
 let cameraSetting = {
@@ -8,6 +10,10 @@ let cameraSetting = {
 
 function playVideo(){
   player.play();
+}
+
+function capture(){
+  ctx.drawImage(player, 0, 0);
 }
 
 function stopVideo(){
